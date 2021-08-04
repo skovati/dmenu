@@ -6,14 +6,16 @@ static int centered = 1;                    /* -c option; centers dmenu on scree
 static int min_width = 400;                    /* minimum width when centered */
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-	"TamzenForPowerline:antialias=false:size=14"
+	"TamzenForPowerline:antialias=false:size=13"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
+static const char fg[]         = "#282828";
+static const char bg[]         = "#686868";
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#c5c8c6", "#1d1f21" },
-	[SchemeSel] = { "#1d1f21", "#c5c8c6" },
-	[SchemeOut] = { "#c5c8c6", "#1d1f21" },
+	[SchemeNorm] = { fg, bg },
+	[SchemeSel] = { bg, fg },
+	[SchemeOut] = {bg, fg},
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 10;
